@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind使用</title>
+</head>
+<body>
+<script src="../../js/vue.js"></script>
+<div id="app">
+    <!--错误做法：这里不可以使用mustache语法，这两种做法都不正确,
+    不能达到动态展示的效果-->
+   <!-- <img src="{{imgUrl}}" alt="">-->
+    <!--<img src="imgUrl" alt="">-->
+    <img v-bind:src="imgUrl" alt=""><br/>
+    <a v-bind:href="jdurl">打开京东，畅享购物</a>
+    <!--v-bind语法糖写法：冒号“:”-->
+    <img :src="imgUrl" alt=""><br/>
+</div>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好',
+            imgUrl:'https://imgcps.jd.com/ling/100005171461/56yU6K6w5pys57K-6YCJ5aSn54mM/5aW956S85LiN5pat/p-5bd8253082acdd181d02f9e8/029d077b/590x470.jpg',
+            jdurl:"https://www.jd.com/"
+        }
+    })
+</script>
+</body>
+</html>

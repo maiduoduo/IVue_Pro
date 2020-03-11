@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../../js/vue.js"></script>
+<div id="app">
+    <h2>{{fullName}}</h2>
+</div>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好',
+            firstName:'Lebron',
+            lastName:'James'
+        },
+        computed:{
+
+            fullName: {
+                //计算属性一般没有set方法，只读属性
+                //如果赋予新值，可以这样写
+                set:function (newValue) {
+                    console.log("-------",newValue);
+                    //替换值
+                    const names = newValue.split(' ');
+                    this.firstName = names[0];
+                    this.lastName = names[1]
+
+                },
+                get:function () {
+                    return this.firstName + '  ' + this.lastName
+                }
+            },
+            //    =======  ↓ ========
+            //因为一般只用到get方法,所以可以缩写为下列形式
+            // fullName:function () {
+            //     return this.firstName + '  ' + this.lastName
+            // }
+        }
+    })
+</script>
+</body>
+</html>

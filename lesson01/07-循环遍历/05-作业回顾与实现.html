@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<script src="../../js/vue.js"></script>
+
+<!--作业内容：将数组展示，并添加每一项的点击事件，点击哪一项内容变为红色。-->
+<div id="app">
+    <p>将数组展示，并添加每一项的点击事件，点击哪一项内容变为红色</p>
+    <ul>
+        <li
+            v-for="(movie,index) in movies"
+            :class="{active:currentIndex === index}"
+            @click="liClick(index)">
+            {{index+1}}-{{movie}}
+        </li>
+    </ul>
+</div>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好',
+            movies:["金刚葫芦娃","黑猫警长","舒克与贝塔","猫和老鼠","海绵宝宝","熊大熊二","喜羊羊与灰太狼"],
+            currentIndex:1
+        },
+        methods:{
+            liClick(index){
+                this.currentIndex = index
+            }
+        }
+    })
+</script>
+</body>
+</html>

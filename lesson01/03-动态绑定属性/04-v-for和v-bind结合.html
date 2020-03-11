@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for和v-bind结合</title>
+</head>
+<body>
+<script src="../../js/vue.js"></script>
+
+<div id="app">
+    <h2>{{message}}，Vue</h2>
+    <ul>
+        <!--<li v-for="变量 in 列表"></li>-->
+        <!--<li>{{movies[0]}}</li>-->
+        <li v-for="m in movies">{{m}}</li>
+        <!--需求：点击列表的条目，点击变成红色，不点击为黑色-->
+    </ul>
+</div>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好',
+            movies:['放牛班的春天','少年班','大鱼海棠','X战警']
+        }
+    })
+</script>
+</body>
+</html>

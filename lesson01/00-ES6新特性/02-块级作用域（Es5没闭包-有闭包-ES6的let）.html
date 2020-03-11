@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../../js/vue.js"></script>
+<div id="app">
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+</div>
+
+<script>
+    //1.没有块级作用域引起的问题：for的块级
+    //为什么闭包可以解决问题：函数是一个作用域
+    //1.情况1：ES5中没有使用闭包（错误方式，点击错乱）
+    var btns = document.getElementsByTagName('button');
+    for (var i = 0; i < btns.length;i++){
+        btns[i].addEventListener('click',function () {
+            console.log('ES5不使用闭包：第' + i + '个按钮被点击');
+        })
+    }
+
+    //2.情况2：ES5中使用闭包
+    for (var i = 0; i < btns.length;i++){
+        (function (i) {
+            btns[i].addEventListener('click',function () {
+                console.log('ES5使用闭包：第' + i + '个按钮被点击');
+            })
+        })(i)
+    }
+
+    //3.情况3：ES6中使用let,if/for拥有自己的作用域
+    for (let i = 0; i < btns.length;i++){
+        btns[i].addEventListener('click',function () {
+            console.log('ES6使用let：第' + i + '个按钮被点击');
+        })
+    }
+
+
+
+
+
+    // const app = new Vue({
+    //     el: '#app',
+    //     data: {
+    //         message: '你好',
+    //     }
+    // })
+</script>
+</body>
+</html>

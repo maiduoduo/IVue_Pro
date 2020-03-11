@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性的缓存</title>
+    <!--缓存：；计算属性会进行缓存，如果使用多次，计算属性只会调用一次-->
+</head>
+<body>
+<script src="../../js/vue.js"></script>
+<div id="app">
+    <h2>{{message}}，Vue</h2>
+</div>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好',
+        }
+    })
+</script>
+</body>
+</html>

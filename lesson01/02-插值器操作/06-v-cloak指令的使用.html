@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--在某些情况下，我们浏览器可能会直接显示出未编译的Mustache标签-->
+    <title>v-cloak指令的使用</title>
+
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<script src="../../js/vue.js"></script>
+<div id="app" v-cloak>
+    <h2>{{message}}，Vue</h2>
+</div>
+
+<script>
+    //在Vue解析之前，div中有一个属性v-cloak
+    //在Vue解析之后，div中没有一个属性v-cloak
+    // /*模拟延迟编译加载*/
+    setTimeout(function () {
+        const app = new Vue({
+            el:'#app',
+            data:{
+                message:'你好',
+            }
+        })
+    },1000)
+</script>
+
+
+
+</body>
+</html>

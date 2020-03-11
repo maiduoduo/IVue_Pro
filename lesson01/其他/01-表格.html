@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../../js/vue.js"></script>
+<div id="app">
+    <h1>{{message}}</h1>
+    <table>
+
+        <thead>
+        <tr>
+            <td>THEAD 中的文本</td>
+        </tr>
+        </thead>
+
+        <tfoot>
+        <tr>
+            <td>TFOOT 中的文本</td>
+        </tr>
+        </tfoot>
+
+        <tbody>
+        <tr>
+            <td>TBODY 中的文本</td>
+        </tr>
+        </tbody>
+
+    </table>
+
+    <table align="center" width="500" height="400" border=1 bordercolor="#00ff99">
+        <tbody>
+        <tr><td colspan="3" align="center">网站名称</td>
+        </tr>
+        <tr><td width="30%" height="25">网站标题</td>
+            <td colspan="2" align="center">搜索框</td>
+        </tr>
+        <tr><td width="30%">左边</td>
+            <td width="40%">中间</td>
+            <td>右边</td>
+        </tr>
+        <tr><td colspan="3" align="center">网站底部信息</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <ol>
+        <li>sdds</li>
+        <li>sdds</li>
+        <li>sdds</li>
+    </ol>
+
+
+</div>
+
+
+<select>
+    <optgroup label="Swedish Cars">
+        <option value="volvo">volvo</option>
+        <option value="Benz">Benz</option>
+        <option value="BMW">BMW</option>
+    </optgroup>
+    <optgroup label="German Cars">
+        <option value="mercedes">mercedes</option>
+        <option value="audi">audi</option>
+    </optgroup>
+    <optgroup label="Swedish Cars">
+        <option value="volvo">volvo</option>
+        <option value="Benz">Benz</option>
+        <option value="BMW">BMW</option>
+    </optgroup>
+</select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好',
+        }
+    })
+</script>
+</body>
+</html>

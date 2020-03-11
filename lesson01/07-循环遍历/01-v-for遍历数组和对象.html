@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../../js/vue.js"></script>
+<div id="app">
+    <h1>{{message}}</h1>
+    <!--遍历数组-->
+    <!--可以遍历数组的元素值及下标值   格式：（item,index） in letters-->
+    <ul>
+        <!--<li v-for="letter in letters">{{letter}}</li>-->
+        <li v-for="(letter,index) in letters">
+            {{index+1}}. {{letter}}
+        </li>
+    </ul>
+    <!--遍历对象-->
+    <!--在v-for中只添加一个遍历元素，默认遍历的key-value中的value值-->
+    <!--想要遍历key和value    格式：（value,key,index） in personInfo-->
+    <ul>
+        <!--<li v-for="person in personInfo">{{person}}</li>-->
+        <li v-for="(personValue,personKey,index) in personInfo">
+            {{index+1}}-{{personKey}} : {{personValue}}
+        </li>
+    </ul>
+</div>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好',
+            letters:['海湾战争',"尼古拉斯凯奇","平凡的世界","活着"],
+            personInfo:{
+                "name":"Kobe·Bryant",
+                "age":41,
+                "sex":1
+            }
+        }
+    })
+</script>
+</body>
+</html>

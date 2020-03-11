@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性和methods的对比</title>
+</head>
+<body>
+<script src="../../js/vue.js"></script>
+<div id="app">
+    <!--1.直接拼接：语法过于繁冗-->
+    <!--<h2>{{firstName}} {{lastName}}</h2>-->
+
+    <!--2.通过定义methods-->
+    <!--<h2>{{getFullName()}}</h2>-->
+    <!--3.通过定义computed-->
+    <!--<h2>{{fullName}}</h2>-->
+
+    <!--下面演示第2种方案与第3种方案的区别-->
+
+    <!--通过演示：methods中方法，调用几次，执行几次-->
+    <h2>{{getFullName()}}</h2>
+    <h2>{{getFullName()}}</h2>
+    <h2>{{getFullName()}}</h2>
+    <h2>{{getFullName()}}</h2>
+
+    <h2>----------------------------------</h2>
+
+    <!--computed中只执行一次：性能更高-->
+    <!--数据不改变，不会重新执行，Vue内部会进行缓存起来。数据改变，则会重新执行一次-->
+    <h2>{{fullName}}</h2>
+    <h2>{{fullName}}</h2>
+    <h2>{{fullName}}</h2>
+    <h2>{{fullName}}</h2>
+
+
+</div>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好',
+            firstName:'Kobe',
+            lastName:'Bryant'
+        },
+        methods:{
+            getFullName:function () {
+                console.log("----methods get---")
+                return this.firstName + " " + this.lastName
+            }
+        },
+        computed:{
+            fullName:function () {
+                console.log("----computed ---")
+                return this.firstName + " " + this.lastName
+            }
+        }
+    })
+</script>
+</body>
+</html>

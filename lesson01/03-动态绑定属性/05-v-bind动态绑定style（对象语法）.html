@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind动态绑定style（对象语法）</title>
+</head>
+<body>
+<script src="../../js/vue.js"></script>
+<!--我们可以利用v-bind:style来绑定一些CSS内联样式-->
+<!--绑定style有两种方式：1.对象语法  2.数组语法-->
+<div id="app">
+    <!--注意：50px要加单引号-->
+    <h2 :style="{fontSize:'50px'}">{{message}}，Vue</h2>
+    <!--finalSize当成一个变量使用-->
+    <h2 :style="{fontSize:finalSize}">{{message}}，Vue</h2>
+    <h2 :style="{fontSize:finalNoSize + 'px',backgroundColor:finalColor}">{{message}}，Vue</h2>
+    <!--抽取样式写法-->
+    <h2 :style="getStyles()">{{message}}，Vue</h2>
+</div>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好',
+            finalSize:'100px',
+            finalNoSize:10,
+            finalColor:'red'
+        },
+        methods:{
+            getStyles:function () {
+                return {fontSize:this.finalNoSize + 'px',backgroundColor:this.finalColor}
+            }
+        }
+    })
+</script>
+</body>
+</html>

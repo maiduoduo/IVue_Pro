@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../../js/vue.js"></script>
+<!--阻止事件冒泡：@click.stop-->
+<div id="app">
+    <!--1.  .stop修饰符的使用-->
+    <div @click="divClick">
+        文本点击
+        <button @click.stop="btnClick">按钮</button>
+    </div>
+
+    <br>
+    <!--2.  .prevent修饰符的使用-->
+    <!--阻止默认行为：阻止自动提交，自己控制提交的动作-->
+    <form action="baidu">
+       <!-- <input type="submit" value="提交" @click="btnSubmit"/>-->
+        <input type="submit" value="提交" @click.prevent="btnSubmit"/>
+    </form>
+
+    <br>
+    <!--3. 监听某个键盘键帽的-->
+    <!--监听某一个：可以加入某个键的监听-->
+    <input type="text" v-on:keyup.enter="keyUp">
+    <input type="text" v-on:keyup.A="keyUp">
+
+    <br>
+    <!--4. .once修饰符的使用-->
+    <button @click="btnOnceClick">.Once修饰符使用</button>
+    <br>
+    <button @click.once="btnOnceClick">.Once修饰符使用</button>
+</div>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好',
+        },
+        methods:{
+            divClick(){
+                console.log('divClick');
+            },
+            btnClick(){
+                console.log('btnClick');
+            },
+            btnSubmit() {
+                console.log('btnSubmit');
+            },
+            keyUp() {
+                console.log('keyUp');
+            },
+            btnOnceClick() {
+                console.log('btnOnceClick');
+            }
+        }
+    })
+</script>
+</body>
+</html>

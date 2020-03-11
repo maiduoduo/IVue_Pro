@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../../js/vue.js"></script>
+<div id="app">
+    <ul>
+        <li v-for="animal in animals">{{animal}}</li>
+    </ul>
+    <button @click="btnClick()">button</button>
+</div>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好',
+            animals:['河马','孔雀','金丝猴','非洲犀牛','高原红骆驼']
+        },
+        methods:{
+            btnClick:function () {
+                //-------------------↓ 以下数组方法都是响应式的  ↓ ----------------------
+
+                //1.push:在数组后面添加元素：元素为数组形式，可以添加多个
+                // this.animals.push('野生山雀','东北虎','鳄鱼')
+
+                //2.pop：删除数组中的最后一项item
+                // this.animals.pop()
+
+                //3.shift: 移除数组的第一项item
+                // this.animals.shift()
+
+                //4.unShift: 在数组第一项前面添加元素，参数：unshift(...items: T[])，可以添加多个元素
+                // this.animals.unshift('国宝熊猫','大猩猩','大象')
+
+                //5. splice:插入/替换/删除   start:从index开始。 deleteCount:删除几个元素
+                //★ 插入：splice(start: number, deleteCount: number, ...items: T[]);
+                // ==> start:从index开始。 deleteCount:删除几个元素 ...items:添加多个元素
+                // this.animals.splice(1,0,"长颈鹿")
+                //--------------------------------------------------------------------------
+                //★ 替换： splice(start: number, deleteCount: number, ...items: T[]): T[];
+                //==> start:从index开始。 deleteCount:删除几个元素 ...items:添加多个元素（1/多个）
+                // this.animals.splice(0,3,"恐龙","豹子")
+                //--------------------------------------------------------------------------
+                //★ 删除: splice(start: number, deleteCount?: number): T[];
+                //Removes elements from an array and, if necessary, inserts new elements in their place, returning the deleted elements.
+                //==> start:从index开始。 deleteCount:删除几个元素
+                // this.animals.splice(2,1)
+
+                //6.sort: 数组排序
+                //==> sort()方法还允许带一个函数类型的的参数，我们可以称之为比较函数，当该比较函数又可以接收两个参数
+                // this.animals.sort()
+                //函数1：data.sort((a, b)=> a.localeCompare(b, 'zh')); //a~z 排序
+                //函数2：data.sort((a, b)=> b.localeCompare(a, 'zh')); //z~a 排序
+                // this.animals.sort((a,b) => a.localeCompare(b, 'zh'))
+
+                //7.reverse
+                // this.animals.reverse()
+
+
+                //8. Vue中的方法替换元素
+                // set (target, key, val) ==> set(要修改的对象,索引值,修改后的值)
+                //如果不填第三个参数，默认修改成空
+                // Vue.set(this.animals,0,2)
+                // Vue.set(this.animals,0,"啊呜啊呜啊呜")
+
+
+
+                //-------------------↓ 以下数组方法不是响应式的  ↓ ----------------------
+
+                //注意：通过索引值修改某个元素，可以改变数组某一项的值，但是在界面上不会刷新显示改变后的内容，不是响应式的。
+                // this.animals[0] = '喇叭花'
+
+
+
+            }
+        }
+    })
+</script>
+</body>
+</html>

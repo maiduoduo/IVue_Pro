@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--这种不常用，不灵活-->
+    <title>v-text指令的使用</title>
+    <script src="../../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <h2>{{message}}，Vue</h2>
+    <h2 v-text="message">,Vue</h2>
+</div>
+
+<script>
+    const app = new Vue({
+        el:'#app',
+        data:{
+            message:'你好',
+        }
+    })
+</script>
+</body>
+</html>

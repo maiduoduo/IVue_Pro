@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../../js/vue.js"></script>
+<div id="app">
+    <h2>{{firstName + '' + lastName}}</h2>
+    <h2>{{firstName}} {{lastName}}</h2>
+    <!--函数操作：-->
+    <h2>函数中获取全名：{{getFullName()}}</h2>
+    <!--计算属性操作：-->
+    <h2>计算属性中获取全名：{{fullName}}</h2>
+</div>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好',
+            firstName:'Lebron',
+            lastName:'James'
+        },
+        methods:{
+            getFullName:function () {
+               return this.firstName + '  ' + this.lastName
+            }
+        },
+        //计算属性：名字命名以属性命名
+        computed:{
+            fullName:function () {
+                return this.firstName + ' ' + this.lastName
+            }
+        }
+    })
+</script>
+</body>
+</html>

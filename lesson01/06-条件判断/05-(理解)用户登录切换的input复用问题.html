@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="../../js/vue.js"></script>
+<div id="app">
+    <!--当解决复用的问题的时候，可以给定key=""属性-->
+    <span v-if="isUser">
+        <label for="username">用户账号</label>
+        <input type="text" placeholder="请输入账号" id="username" key="username">
+    </span>
+    <span v-else>
+        <label for="email">用户邮箱</label>
+        <input type="text" placeholder="请输入邮箱" id="email" key="email">
+    </span>
+    <button @click="switchModeClick">切换登录方式</button>
+</div>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好',
+            isUser:true
+        },
+        methods:{
+            switchModeClick(){
+                this.isUser = !this.isUser
+            }
+        }
+    })
+</script>
+</body>
+</html>

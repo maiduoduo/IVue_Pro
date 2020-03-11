@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>const的使用</title>
+    <!--const关键字-->
+    <!--1.在很多语言中已经存在，比如C/C++中，主要的作用是将某个变量修饰为常量-->
+    <!--2.在JavaScript中也是如此，使用const修饰的标识符为常量，不可以再次赋值-->
+
+    <!--什么时候使用const-->
+    <!--当我们修饰的标识符不会再次被赋值时，就可以使用const来保证数据的安全性-->
+
+    <!--建议-->
+    <!--在ES6开发中，优先使用const，只有需要改变某一个标识符的时候才使用let-->
+</head>
+<body>
+<script src="../../js/vue.js"></script>
+<div id="app">
+    <h2>{{message}}，Vue</h2>
+</div>
+
+<script>
+    /*const的注意一*/
+    // const a = 20;
+    // a = 30;//错误，不可以修改常量值
+
+    /*const的注意二*/
+    // const  name;//错误：const修饰的标识符必须赋值
+
+    /*const的注意三：常量的含义指向的对象不能修改，但是可以改变对象内部的属性*/
+    const obj ={
+        name:'erya',
+        age:16,
+        height:1.80
+    }
+    console.log(obj);
+
+    obj.name = 'James';
+    obj.age = 46;
+    obj.height = 1.90;
+
+    console.log(obj);
+
+
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '你好',
+        }
+    })
+</script>
+</body>
+</html>
