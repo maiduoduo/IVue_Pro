@@ -37,6 +37,7 @@
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -97,6 +98,7 @@
     <option name="height" value="993" />
   </component>
   <component name="ProjectId" id="1Xk9zYZrpGjQHCreoHxH4SVhsKr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -108,11 +110,6 @@
             <path>
               <item name="VueStudy" type="b2602c69:ProjectViewProjectNode" />
               <item name="VueStudy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="VueStudy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VueStudy" type="462c0819:PsiDirectoryNode" />
-              <item name="lesson01" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -129,6 +126,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
@@ -189,16 +187,15 @@
       <workItem from="1583371170565" duration="8418000" />
       <workItem from="1583399507920" duration="601000" />
       <workItem from="1583738724590" duration="617000" />
-      <workItem from="1583895052419" duration="70000" />
+      <workItem from="1583895052419" duration="321000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59980000" />
+    <option name="totallyTimeSpent" value="60231000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1861" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18431157" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
